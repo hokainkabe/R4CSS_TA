@@ -1,7 +1,7 @@
 ---
 title: "Lab01_Homework_RMarkdown"
-author: "你是誰 R09342000 新聞所碩五"
-date: "2021/02/22"
+author: "何嘉燕 B05305016 社會五"
+date: "2021/02/23"
 output:
   html_document:
     number_sections: no
@@ -18,8 +18,8 @@ knitr::opts_chunk$set(echo = TRUE, results = 'hold', comment = '#>', error = TRU
 
 ## 作業目的：Markdown 語法學習
 
-這份作業希望能夠讓你熟習於撰寫 Markdown 語法，希望你能夠成為 Markdown 界的霸主，聽起來很厲害。
-
+這份作業希望能夠讓你熟習於撰寫 Markdown 語法，希望你能夠成為 Markdown 界的霸主，聽起來很厲害。   
+   
 請參考網路上的教學，你可以選擇仔細練習每個部份，或是有問題的時候再去查找上面的資源。緊接著就要開始寫第一份作業了，真是令人興奮！
 
 你可以隨時點擊 RStudio 上方的 Knit 按鈕輸出檔案並且預覽，也可以利用
@@ -35,21 +35,49 @@ knitr::opts_chunk$set(echo = TRUE, results = 'hold', comment = '#>', error = TRU
 
 介紹文必須包含底下者三種元素：字體加深, 清單(lists), 連結(links)。此外，請你再額外挑選至少兩種元素，譬如說字體變斜, 插入圖片, 加入引用, etc.  
 
-因為重點是使用 Markdown 語法，因此字數不用多，250字~400字即可，全文段落在 2段~4段間，請練習如何在 Markdown 中分行與分段！
+因為重點是使用 Markdown
+語法，因此字數不用多，250字~400字即可，全文段落在 2段~4段間，請練習如何在 Markdown 中分行與分段！
 
 請把結果貼在`#### 結果`下方。
  
 #### 結果
+今天要介紹的資料新聞是**林佳賢**在2016年所寫的**「交換學生男性女性偏好大不同？3張圖表帶你看台灣大學生交換出國選擇」**，文章採用教育部高等教育司的*本國學生出國進修交流資料*，看看台灣大專院校學生的交換選擇。
+
+統計資料看出，從*101學年度第一學期到103學年度第一學期*，全國大專院校約有3.5萬名大學生出國交換。最多交換學生的前20個國家：   
+   1.中國(超過8千人)         
+   2.日本   
+   3.美國  
+   4.韓國  
+   5.德國  
+   6.法國   
+
+![](https://tnl-static.s3-ap-northeast-1.amazonaws.com/2016/05/各國交換人數.png)
+
+而交換學生女性和男性的比例為2：1，在不同國家的交換學生性別比率中，交換學生女性為比率最高的是**韓國**，其次是**法國、荷蘭**。   
+![](https://tnl-static.s3-ap-northeast-1.amazonaws.com/2016/05/各國女性比例rev.png)
+
+原文網址：<https://www.thenewslens.com/article/28822>
 
 ### B. R code chunk 練習 (40 分) 
 
 #### B.01 (20分)
 
 如先前所提，Rmarkdown 當中可以插入 code chunk，請參考 [RStudio 的教學](https://rmarkdown.rstudio.com/lesson-3.html)，在底下插入一段 code chunk，並在當中計算 `1+1` 的答案並將結果列印出來。
+```{r}
+1+1
+```
 
 #### B.02 (20分)
-- 請解釋 chunk header 中參數 include = FALSE 會有什麼後果，並在底下加一段 include = FALSE 的 code chunk，一樣在裡面計算 `1+1` 的答案。
+- 請解釋 chunk header 中參數 include = FALSE 會有什麼後果，並在底下加一段 include = FALSE 的 code chunk，一樣在裡面計算 `1+1` 的答案。   
+**答：**不會把程式碼和運算結果出現在完成的檔案中，但R仍會運算Chunk，並把運算結果供給其他Chunk使用。
+```{r include = FALSE}
+1+1
+```
 
-- 請解釋 chunk header 中參數 echo = FALSE 會有什麼後果，並在底下加一段 echo = FALSE 的 code chunk，一樣在裡面計算 `1+1` 的答案。
+- 請解釋 chunk header 中參數 echo = FALSE 會有什麼後果，並在底下加一段 echo = FALSE 的 code chunk，一樣在裡面計算 `1+1` 的答案。   
+**答：**不會把程式碼出現，但會讓運算結果顯示在完成的檔案中，有利繪製圖形。
+```{r echo = FALSE }
+1+1
+```
 
 
