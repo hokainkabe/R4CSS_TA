@@ -1,7 +1,7 @@
 ---
 title: "AS02_R-Intermediate"
-author: "你是誰 R09342000 新聞所碩五"
-date: "2021/02/22"
+author: "何嘉燕 B05305016 社會五"
+date: "2021/03/12"
 output:
   html_document:
     number_sections: no
@@ -41,8 +41,17 @@ knitr::opts_chunk$set(echo = TRUE, results = 'hold', comment = '#>', error = TRU
 
 ```{r message=FALSE}
 ### your code
-# library(tidyverse)
-# library(stringr)
+library(stringr)
+vector_shop<- c("五九麵館", "親來食堂", "憶馬當鮮", "揪食堂韓國餐館","找碗", "大李水餃", "李記水餃", "林師傅", "馬祖麵館")
+vector_weekday<- c("週一", "週二", "週三", "週四", "週五","週六", "週日")
+ for (i in vector_weekday){
+  for (j in vector_shop){
+ if(i=="週一"){
+  even_length<-(str_length(vector_shop[j])%%2)==1
+  print(str_c(i,"小軒吃",even_length))
+ }
+  }
+ }
 
 ### result should be
 # [1] "週一小軒吃揪食堂韓國餐館"
@@ -71,8 +80,7 @@ knitr::opts_chunk$set(echo = TRUE, results = 'hold', comment = '#>', error = TRU
  - `hsuan_meal("週日", "找碗")` 會得到 `週日小軒不吃找碗`
 
 ```{r}
-vector_shop <- c("五九麵館", "親來食堂", "憶馬當鮮", "揪食堂韓國餐館", 
-                "找碗", "大李水餃", "李記水餃", "林師傅", "馬祖麵館")
+vector_shop <- c("五九麵館", "親來食堂", "憶馬當鮮", "揪食堂韓國餐館","找碗", "大李水餃", "李記水餃", "林師傅", "馬祖麵館")
 vector_weekday <- c("週一", "週二", "週三", "週四", "週五", "週六", "週日")
 
 ### your code
@@ -104,10 +112,16 @@ vector_weekday <- c("週一", "週二", "週三", "週四", "週五", "週六", 
 
 ```{r}
 ### your code
-# get_zodiac <- function(){
-#   
-# }
-
+library(lubridate)
+get_zodiac <- function(input_date){
+ input_date<- as.date(input_date)
+     if(!is.character(input_date)){
+       print("請以'YYYY-MM-DD'格式輸入數字")
+     }else if((input_date>=as.Date("09-23"))&(input_date<=as.Date("10-23"))){
+       print("天秤座")
+     }
+}
+get_zodiac(1998-09-23)
 ### test your code
 ```
 
@@ -120,7 +134,11 @@ vector_weekday <- c("週一", "週二", "週三", "週四", "週五", "週六", 
 ```{r message=FALSE}
 ### your code
 # 幫你讀好檔名了
-vector_file_name <- list.files(path = "data/Lab03/", full.names=TRUE)
+# vector_file_name <- list.files(path = "data/Lab03/", full.names=TRUE)
+# lapply(vector_file_name,function(x){
+#   read.csv(x)
+# }
+#        )
 ```
 
 
@@ -141,6 +159,7 @@ vector_file_name <- list.files(path = "data/Lab03/", full.names=TRUE)
 vector_file_name <- list.files(path = "data/Lab03/", full.names=TRUE)
 ### your code
 ```
+
 
 
 
